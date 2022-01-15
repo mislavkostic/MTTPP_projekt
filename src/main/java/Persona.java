@@ -6,8 +6,8 @@ public class Persona {
     String password;
     EmailGenerator generator;
 
-    public Persona(){
-        generator = new EmailGenerator();
+    public Persona(EmailGenerator generator){
+        this.generator = generator;
         email = generator.generateEmail();
         firstName = "John";
         lastName = "Doe";
