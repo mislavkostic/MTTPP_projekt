@@ -70,7 +70,7 @@ public class SeleniumTests{
     }
 
     @Test(priority = 4)
-    public void loginTest() throws InterruptedException {
+    public void loginTest() {
         String expected = "My Account";
         String title;
 
@@ -83,24 +83,36 @@ public class SeleniumTests{
         driver.findElement(By.id("input-password")).sendKeys(testPersona.password);
         driver.findElement(By.xpath("//input[@value=\"Login\"]")).click();
 
-        //assert
         title = driver.getTitle();
         Assert.assertEquals(title, expected);
     }
 
-    @Test
-    public void addToCartTest(){
-        //TODO: add to shopping cart test
+    @Test(priority = 5)
+    public void addToCartTest() throws InterruptedException {
+        //navigate to item
+        driver.navigate().to("https://demo.opencart.com/");
+        driver.findElement(By.linkText("Desktops")).click();
+        driver.findElement(By.linkText("Mac (1)")).click();
+
+        //add item to cart
+        Thread.sleep(1000);
+        driver.findElement(By.linkText("iMac")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("button-cart")).click();
+
+        //check cart
+        Thread.sleep(400);
+        driver.findElement(By.id("cart")).click();
+        driver.findElement(By.className("fa-shopping-cart")).click();
+
+        //check if item exists in cart
+        Assert.assertNotNull(driver.findElement(By.linkText("iMac")));
+
     }
 
     @AfterMethod
     public void teardownTest(){
         driver.quit();
     }
-
-
-
-    //TODO: README.md documentation
-    //TODO: refactor
 
 }
