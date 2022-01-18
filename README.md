@@ -3,7 +3,7 @@
 ## About
 This project tests **accessibility** and **UI features** of  [OpenCart](https://demo.opencart.com/) trough 5 test cases.
 
-###Setup
+### Setup
 
 ```
 This project was built and tested using Google Chrome as the chosen Web browser. 
@@ -27,11 +27,11 @@ Google Chrome and it's respected tools.
   - *(in this case, **[ChromeDriver](https://chromedriver.chromium.org/)** was used)*
 - [REST Assured](https://rest-assured.io/) - group of *Java* libraries which enable automation of Rest API testing
 
-##Project structure
+## Project structure
 
 Source code contains comments to further help with understanding how the test suite works
 
-###Classes
+### Classes
 
 - [SeleniumTests](https://github.com/mislavkostic/MTTPP_projekt/blob/master/src/main/java/SeleniumTests.java)
   - the main source file
@@ -45,7 +45,7 @@ Source code contains comments to further help with understanding how the test su
   - it uses [EmailGenerator](https://github.com/mislavkostic/MTTPP_projekt/blob/master/src/main/java/EmailGenerator.java) to generate new email addresses for each test run
   
 
-###Test cases
+### Test cases
 Before each test case, method [setupTests()](https://github.com/mislavkostic/MTTPP_projekt/blob/c20cba0dbb06a457a8ae9a2224b192f5c54ef26d/src/main/java/SeleniumTests.java#L16) is run, setting up [ChromeDriver](https://chromedriver.chromium.org/) in which the tests are run
 
 - [googleResultTest()](https://github.com/mislavkostic/MTTPP_projekt/blob/c20cba0dbb06a457a8ae9a2224b192f5c54ef26d/src/main/java/SeleniumTests.java#L26)
@@ -69,7 +69,7 @@ Before each test case, method [setupTests()](https://github.com/mislavkostic/MTT
 
 After each test case, method [teardownTest()](https://github.com/mislavkostic/MTTPP_projekt/blob/c20cba0dbb06a457a8ae9a2224b192f5c54ef26d/src/main/java/SeleniumTests.java#L114) is run, shutting down [ChromeDriver](https://chromedriver.chromium.org/)
 
-##License
+## License
 ```
 Copyright © 2022 Mislav Kostić
 ```
